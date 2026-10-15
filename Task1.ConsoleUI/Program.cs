@@ -20,5 +20,21 @@ public class Program
             }
         }
 
+        int[] array = new int [size];
+        
+        for (int i = 0; i <= array.Length - 1; i++)
+        {
+            bool flag = false;
+            while (!flag)
+            {
+                Console.WriteLine($"Введите элемент {i + 1}: ");
+                string? input = Console.ReadLine();
+                flag = int.TryParse(input, out array[i]);
+                if (!flag)
+                {
+                    Console.WriteLine("Некорректный ввод");
+                }
+            }
+        }
     }
 }
