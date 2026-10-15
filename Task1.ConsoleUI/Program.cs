@@ -36,5 +36,19 @@ public class Program
                 }
             }
         }
+
+        bool isSorted = true;
+        for (int i = 1; i < array.Length; i++)
+        {
+            if (array [i - 1] > array [i])
+            {
+                isSorted = false;
+            }
+        }
+        if (!isSorted) 
+        {
+                Console.WriteLine("Не отсортированный массив");
+                return; 
+        }
     }
 }
