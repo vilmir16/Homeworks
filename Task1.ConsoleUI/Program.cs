@@ -50,5 +50,31 @@ public class Program
                 Console.WriteLine("Не отсортированный массив");
                 return; 
         }
+
+        int target = 0;
+        bool targetParsed = false;
+        while (!targetParsed)
+        {
+            Console.WriteLine("Введите искомое число: ");
+            string? input = Console.ReadLine();
+            targetParsed = int.TryParse(input, out target);
+            if (!targetParsed)
+            {
+                Console.WriteLine("Некорректный ввод");
+            }
+        }
+
+        int result = SearchAlgorithms.BinarySearch(array, target);
+
+        if (result == -1)
+        {
+            Console.WriteLine("Элемент не найден");
+        }
+        else
+        {
+            Console.WriteLine($"Элемент найден на позиции {result}");
+        }
+
+
     }
 }
