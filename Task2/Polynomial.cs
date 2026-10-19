@@ -77,7 +77,36 @@ public class Polynomial
             }
             array[i] = aValue + bValue;
         }
+        return new Polynomial(array);
+    }
 
+    public static Polynomial operator -(Polynomial a, Polynomial b)
+    {
+        double[] array = new double[Math.Max(a._coefficients.Length, b._coefficients.Length)];
+        for (int i = 0; i < array.Length; i++)
+        {
+            double aValue;
+            if (i < a._coefficients.Length)
+            {
+                aValue = a._coefficients[i];
+            }
+            else
+            {
+                aValue = 0;
+            }
+
+            double bValue;
+            if (i < b._coefficients.Length)
+            {
+                bValue = b._coefficients[i];
+            }
+            else
+            {
+                bValue = 0;
+            }
+
+            array[i] = aValue - bValue;
+        }
         return new Polynomial(array);
     }
 }

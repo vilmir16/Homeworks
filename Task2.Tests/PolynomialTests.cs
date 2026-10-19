@@ -33,4 +33,15 @@ public class PolynomialTests
         Assert.Equal("3 + 1x + 4x^2", c.ToString());
         
     }
+
+    [Fact]
+    public void SubstractionTwoPolynomial()
+    {
+        Polynomial a = new Polynomial(3, 2, 5);
+        Polynomial b = new Polynomial(1, 0);
+        
+        Polynomial c = a - b;
+        
+        Assert.Equal("2 + 2x + 5x^2", c.ToString());
+    }
 }
