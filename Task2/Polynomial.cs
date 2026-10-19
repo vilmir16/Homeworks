@@ -37,8 +37,47 @@ public class Polynomial
                 result += "x^" + i;
             }
         }
-        
         return result;
     }
-    
+
+    public double Calculate(double x)
+    {
+        double result = 0;
+
+        for (int i = 0; i <= _coefficients.Length - 1; i++)
+        {
+            result += _coefficients[i] * Math.Pow(x, i);
+        }
+        return result;
+    }
+
+    public static Polynomial operator +(Polynomial a, Polynomial b)
+    {
+        double[] array = new double [Math.Max(a._coefficients.Length, b._coefficients.Length)];
+        for (int i = 0; i <= array.Length - 1; i++)
+        {
+            double aValue;
+            if (i < a._coefficients.Length)
+            {
+                aValue = a._coefficients[i];
+            }
+            else
+            {
+                aValue = 0;
+            }
+
+            double bValue;
+            if (i < b._coefficients.Length)
+            {
+                bValue = b._coefficients[i];
+            }
+            else
+            {
+                bValue = 0;
+            }
+            array[i] = aValue + bValue;
+        }
+
+        return new Polynomial(array);
+    }
 }
