@@ -44,4 +44,78 @@ public class PolynomialTests
         
         Assert.Equal("2 + 2x + 5x^2", c.ToString());
     }
+
+    [Fact]
+    public void ProductTwoPolynomial()
+    {
+        Polynomial a = new Polynomial(1, 1);
+        Polynomial b = new Polynomial(2, 3);
+
+        Polynomial c = a * b;
+        
+        Assert.Equal("2 + 5x + 3x^2", c.ToString());
+    }
+
+    [Fact]
+    public void TrueEqualsInvalidPolynomial()
+    {
+        Polynomial a = new Polynomial(1, 1);
+        Polynomial b = new Polynomial(1, 1);
+        
+        
+        Assert.True(a.Equals(b));
+    }
+
+    [Fact]
+    public void FalseEqualsInvalidPolynomial()
+    {
+        Polynomial a = new Polynomial(1, 2);
+        Polynomial b = new Polynomial(1, 3);
+        
+        Assert.False(a.Equals(b));
+    }
+
+    [Fact]
+    public void EqualsOfGetHashCode()
+    {
+        Polynomial a = new Polynomial(1, 2);
+        Polynomial b = new Polynomial(1, 2);
+        
+        Assert.Equal(a.GetHashCode(),b.GetHashCode());
+    }
+
+    [Fact]
+    public void EqualOperatorTrue()
+    {
+        Polynomial a = new Polynomial(1, 2);
+        Polynomial b = new Polynomial(1, 2);
+        
+        Assert.True(a == b);
+    }
+
+    [Fact]
+    public void ReverseEqualOperatorTrue()
+    {
+        Polynomial a = new Polynomial(1, 2);
+        Polynomial b = new Polynomial(1, 3);
+        
+        Assert.True(a != b);
+    }
+
+    [Fact]
+    public void NullOperator()
+    {
+        Polynomial a = new Polynomial(1, 2);
+        
+        Assert.False(a == null);
+    }
+
+    [Fact]
+    public void NullEqualOperator()
+    {
+        Polynomial? a = null;
+        Polynomial b = new Polynomial(1, 2);
+        
+        Assert.False(a == b);
+    }
 }

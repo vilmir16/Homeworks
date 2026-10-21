@@ -109,4 +109,65 @@ public class Polynomial
         }
         return new Polynomial(array);
     }
+
+    public static Polynomial operator *(Polynomial a, Polynomial b)
+    {
+        double[] array = new double[a._coefficients.Length + b._coefficients.Length - 1];
+
+        for (int i = 0; i < a._coefficients.Length; i++)
+        {
+            for (int j = 0; j < b._coefficients.Length; j++)
+            {
+                array[i + j] += a._coefficients[i] * b._coefficients[j];
+            }
+        }
+        return new Polynomial(array);
+    }
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is not Polynomial other)
+        {
+            return false;
+        }
+
+        if (_coefficients.Length != other._coefficients.Length)
+        {
+            return false;
+        }
+
+        for (int i = 0; i < _coefficients.Length; i++)
+        {
+            if (_coefficients[i] != other._coefficients[i])
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public override int GetHashCode()
+    {
+        HashCode hash = new HashCode();
+        for (int i = 0; i < _coefficients.Length; i++)
+        {
+              hash.Add(_coefficients[i]);  
+        }
+        return hash.ToHashCode();
+    }
+
+    public static bool operator ==(Polynomial? a, Polynomial? b)
+    {
+        if (a is null)
+        {
+            return b is null;
+        }
+        return a.Equals(b);
+    }
+
+    public static bool operator !=(Polynomial? a, Polynomial? b)
+    {
+        
+        return !(a == b);
+    }
 }
