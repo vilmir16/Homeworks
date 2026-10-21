@@ -118,4 +118,30 @@ public class PolynomialTests
         
         Assert.False(a == b);
     }
+
+    [Fact]
+    public void ExpectedDegree()
+    {
+        Polynomial a = new Polynomial(3, 2, 5);
+        
+        Assert.Equal(2, a.Degree);
+    }
+
+    [Fact]
+    public void IndexerReturnsCoefficients()
+    {
+        Polynomial a = new Polynomial(3, 2, 5);
+        
+        Assert.Equal(3, a[0]);
+        Assert.Equal(2, a[1]);
+        Assert.Equal(5, a[2]);
+    }
+
+    [Fact]
+    public void IndexOutOfRangeException()
+    {
+        Polynomial a = new Polynomial(3, 2, 5);
+
+        Assert.Throws<IndexOutOfRangeException>(() => a[5]);
+    }
 }
