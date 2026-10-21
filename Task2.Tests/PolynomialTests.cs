@@ -144,4 +144,12 @@ public class PolynomialTests
 
         Assert.Throws<IndexOutOfRangeException>(() => a[5]);
     }
+
+    [Fact]
+    public void EmptyPolynomialDegree()
+    {
+        Polynomial a = new Polynomial();
+        
+        Assert.Equal(-1, a.Degree);
+    }
 }
