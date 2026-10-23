@@ -12,7 +12,7 @@ public static class EuclideanGcd
             a = b;
             b = c;
         }
-        return a;
+        return Math.Abs(a);
     }
 
     public static int Calculate(int a, int b, out TimeSpan elapsed)

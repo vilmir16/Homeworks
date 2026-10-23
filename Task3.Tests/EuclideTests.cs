@@ -50,4 +50,44 @@ public class EuclideTests
         Assert.Equal(6, result);
         Assert.True(elapsed >= TimeSpan.Zero);
     }
+
+    [Fact]
+    public void CalculatWithFirstZeroParameter()
+    {
+        int result = EuclideanGcd.Calculate(0, 5);
+        
+        Assert.Equal(5, result);
+    }
+    
+    [Fact]
+    public void CalculatWithSecondZeroParameter()
+    {
+        int result = EuclideanGcd.Calculate(5, 0);
+        
+        Assert.Equal(5, result);
+    }
+    
+    [Fact]
+    public void CalculateWithTwoZeroParameters()
+    {
+        int result = EuclideanGcd.Calculate(0, 0);
+        
+        Assert.Equal(0, result);
+    }
+
+    [Fact]
+    public void CalculateWithMinusParameter()
+    {
+        int result = EuclideanGcd.Calculate(12, -18);
+
+        Assert.Equal(6, Math.Abs(result));
+    }
+    
+    [Fact]
+    public void CalculateParameter()
+    {
+        int result = EuclideanGcd.Calculate(12, -18);
+
+        Assert.Equal(6, result);
+    }
 }
