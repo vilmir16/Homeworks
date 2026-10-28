@@ -8,7 +8,7 @@ public class Polynomial
 
     public double this[int index] => _coefficients[index];
     public Polynomial(params double[] coefficients)
-    { 
+    {
         _coefficients = coefficients;
     }
 
@@ -149,7 +149,7 @@ public class Polynomial
         HashCode hash = new HashCode();
         for (int i = 0; i < _coefficients.Length; i++)
         {
-              hash.Add(_coefficients[i]);  
+            hash.Add(_coefficients[i]);
         }
         return hash.ToHashCode();
     }

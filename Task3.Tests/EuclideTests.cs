@@ -12,7 +12,7 @@ public class EuclideTests
     public void CalculateWithOutElapsed()
     {
         int result = EuclideanGcd.Calculate(100, 75, out TimeSpan elapsed);
-        
+
         Assert.Equal(25, result);
         Assert.True(elapsed >= TimeSpan.Zero);
     }
@@ -21,7 +21,7 @@ public class EuclideTests
     public void CalculateWithThreeParametersAndElapsed()
     {
         int result = EuclideanGcd.Calculate(12, 18, 24, out TimeSpan elapsed);
-        
+
         Assert.Equal(6, result);
         Assert.True(elapsed >= TimeSpan.Zero);
     }
@@ -30,7 +30,7 @@ public class EuclideTests
     public void CalculateWithFourParameters()
     {
         int result = EuclideanGcd.Calculate(12, 18, 24, 30);
-        
+
         Assert.Equal(6, result);
     }
 
@@ -38,7 +38,7 @@ public class EuclideTests
     public void CalculateWithZeroParameters()
     {
         int result = EuclideanGcd.Calculate();
-        
+
         Assert.Equal(0, result);
     }
 
@@ -46,7 +46,7 @@ public class EuclideTests
     public void CalculateWithParamsAndElapsed()
     {
         int result = EuclideanGcd.Calculate(out TimeSpan elapsed, 12, 18, 24, 30);
-        
+
         Assert.Equal(6, result);
         Assert.True(elapsed >= TimeSpan.Zero);
     }
@@ -55,23 +55,23 @@ public class EuclideTests
     public void CalculatWithFirstZeroParameter()
     {
         int result = EuclideanGcd.Calculate(0, 5);
-        
+
         Assert.Equal(5, result);
     }
-    
+
     [Fact]
     public void CalculatWithSecondZeroParameter()
     {
         int result = EuclideanGcd.Calculate(5, 0);
-        
+
         Assert.Equal(5, result);
     }
-    
+
     [Fact]
     public void CalculateWithTwoZeroParameters()
     {
         int result = EuclideanGcd.Calculate(0, 0);
-        
+
         Assert.Equal(0, result);
     }
 
@@ -82,7 +82,7 @@ public class EuclideTests
 
         Assert.Equal(6, Math.Abs(result));
     }
-    
+
     [Fact]
     public void CalculateParameter()
     {

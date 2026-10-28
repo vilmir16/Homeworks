@@ -18,7 +18,7 @@ public class PolynomialTests
         Polynomial p = new Polynomial(3, 2, 5);
 
         double result = p.Calculate(3);
-        
+
         Assert.Equal(54, result);
     }
 
@@ -27,11 +27,11 @@ public class PolynomialTests
     {
         Polynomial a = new Polynomial(1, 1);
         Polynomial b = new Polynomial(2, 0, 4);
-        
+
         Polynomial c = a + b;
-        
+
         Assert.Equal("3 + 1x + 4x^2", c.ToString());
-        
+
     }
 
     [Fact]
@@ -39,9 +39,9 @@ public class PolynomialTests
     {
         Polynomial a = new Polynomial(3, 2, 5);
         Polynomial b = new Polynomial(1, 0);
-        
+
         Polynomial c = a - b;
-        
+
         Assert.Equal("2 + 2x + 5x^2", c.ToString());
     }
 
@@ -52,7 +52,7 @@ public class PolynomialTests
         Polynomial b = new Polynomial(2, 3);
 
         Polynomial c = a * b;
-        
+
         Assert.Equal("2 + 5x + 3x^2", c.ToString());
     }
 
@@ -61,8 +61,8 @@ public class PolynomialTests
     {
         Polynomial a = new Polynomial(1, 1);
         Polynomial b = new Polynomial(1, 1);
-        
-        
+
+
         Assert.True(a.Equals(b));
     }
 
@@ -71,7 +71,7 @@ public class PolynomialTests
     {
         Polynomial a = new Polynomial(1, 2);
         Polynomial b = new Polynomial(1, 3);
-        
+
         Assert.False(a.Equals(b));
     }
 
@@ -80,7 +80,7 @@ public class PolynomialTests
     {
         Polynomial a = new Polynomial(1, 2);
         Polynomial b = new Polynomial(1, 2);
-        
+
         Assert.Equal(a.GetHashCode(), b.GetHashCode());
     }
 
@@ -89,7 +89,7 @@ public class PolynomialTests
     {
         Polynomial a = new Polynomial(1, 2);
         Polynomial b = new Polynomial(1, 2);
-        
+
         Assert.True(a == b);
     }
 
@@ -98,7 +98,7 @@ public class PolynomialTests
     {
         Polynomial a = new Polynomial(1, 2);
         Polynomial b = new Polynomial(1, 3);
-        
+
         Assert.True(a != b);
     }
 
@@ -106,7 +106,7 @@ public class PolynomialTests
     public void NullOperator()
     {
         Polynomial a = new Polynomial(1, 2);
-        
+
         Assert.False(a == null);
     }
 
@@ -115,7 +115,7 @@ public class PolynomialTests
     {
         Polynomial? a = null;
         Polynomial b = new Polynomial(1, 2);
-        
+
         Assert.False(a == b);
     }
 
@@ -123,7 +123,7 @@ public class PolynomialTests
     public void ExpectedDegree()
     {
         Polynomial a = new Polynomial(3, 2, 5);
-        
+
         Assert.Equal(2, a.Degree);
     }
 
@@ -131,7 +131,7 @@ public class PolynomialTests
     public void IndexerReturnsCoefficients()
     {
         Polynomial a = new Polynomial(3, 2, 5);
-        
+
         Assert.Equal(3, a[0]);
         Assert.Equal(2, a[1]);
         Assert.Equal(5, a[2]);
@@ -149,7 +149,7 @@ public class PolynomialTests
     public void EmptyPolynomialDegree()
     {
         Polynomial a = new Polynomial();
-        
+
         Assert.Equal(-1, a.Degree);
     }
 }
