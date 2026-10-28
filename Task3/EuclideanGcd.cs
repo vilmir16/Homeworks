@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+
 namespace Task3;
 
 public static class EuclideanGcd
