@@ -53,5 +53,4 @@ public static class EuclideanGcd
         elapsed = sw.Elapsed;
         return result;
     }
-    
 }

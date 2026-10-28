@@ -25,7 +25,6 @@ public static class SearchAlgorithms
             }
         }
         return -1;
-
     }
 
     public static int BinarySearch<T>(T[] array, T target) where T : IComparable<T>
@@ -36,7 +35,7 @@ public static class SearchAlgorithms
         while (left <= right)
         {
             int mid = left + (right - left) / 2;
-            if (array[mid].CompareTo(target)==0)
+            if (array[mid].CompareTo(target) == 0)
             {
                 return mid;
             }

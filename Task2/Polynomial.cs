@@ -7,10 +7,9 @@ public class Polynomial
     public int Degree => _coefficients.Length - 1;
 
     public double this[int index] => _coefficients[index];
-    
     public Polynomial(params double[] coefficients)
-    {
-       _coefficients = coefficients;
+    { 
+        _coefficients = coefficients;
     }
 
     public override string ToString()
@@ -25,7 +24,6 @@ public class Polynomial
             else
             {
                 result += _coefficients[i];
-
             }
 
             if (i == 1)
@@ -53,7 +51,7 @@ public class Polynomial
 
     public static Polynomial operator +(Polynomial a, Polynomial b)
     {
-        double[] array = new double [Math.Max(a._coefficients.Length, b._coefficients.Length)];
+        double[] array = new double[Math.Max(a._coefficients.Length, b._coefficients.Length)];
         for (int i = 0; i <= array.Length - 1; i++)
         {
             double aValue;
@@ -167,7 +165,6 @@ public class Polynomial
 
     public static bool operator !=(Polynomial? a, Polynomial? b)
     {
-        
         return !(a == b);
     }
 }

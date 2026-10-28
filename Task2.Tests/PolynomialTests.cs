@@ -81,7 +81,7 @@ public class PolynomialTests
         Polynomial a = new Polynomial(1, 2);
         Polynomial b = new Polynomial(1, 2);
         
-        Assert.Equal(a.GetHashCode(),b.GetHashCode());
+        Assert.Equal(a.GetHashCode(), b.GetHashCode());
     }
 
     [Fact]

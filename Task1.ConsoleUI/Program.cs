@@ -23,7 +23,7 @@ public class Program
                 }
             }
 
-            int[] array = new int [size];
+            int[] array = new int[size];
 
             for (int i = 0; i <= array.Length - 1; i++)
             {
@@ -78,7 +78,6 @@ public class Program
             {
                 Console.WriteLine($"Элемент найден на позиции {result}");
             }
-            
             Console.WriteLine("Повторить? (y/n)");
             string? answer = Console.ReadLine()?.ToLower();
 
