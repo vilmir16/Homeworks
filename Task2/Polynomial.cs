@@ -19,7 +19,14 @@ public class Polynomial
         {
             if (i != 0)
             {
-                result += " + " + _coefficients[i];
+                if (_coefficients[i] < 0)
+                {
+                    result += " - " + Math.Abs(_coefficients[i]);
+                }
+                else
+                {
+                    result += " + " + _coefficients[i];
+                }
             }
             else
             {

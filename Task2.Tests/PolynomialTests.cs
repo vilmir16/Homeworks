@@ -152,4 +152,12 @@ public class PolynomialTests
 
         Assert.Equal(-1, a.Degree);
     }
+
+    [Fact]
+    public void NegativePolynomial()
+    {
+        Polynomial a = new Polynomial(1, -2, 3);
+
+        Assert.Equal("1 - 2x + 3x^2", a.ToString());
+    }
 }
