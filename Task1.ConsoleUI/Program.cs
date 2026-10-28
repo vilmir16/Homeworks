@@ -52,7 +52,7 @@ public class Program
             if (!isSorted)
             {
                 Console.WriteLine("Не отсортированный массив");
-                return;
+                continue;
             }
 
             int target = 0;
@@ -79,16 +79,8 @@ public class Program
                 Console.WriteLine($"Элемент найден на позиции {result}");
             }
             Console.WriteLine("Повторить? (y/n)");
-            string? answer = Console.ReadLine()?.ToLower();
-
-            if (answer == "y")
-            {
-                repeat = true;
-            }
-            else
-            {
-                repeat = false;
-            }
+            string? answer = Console.ReadLine();
+            repeat = string.Equals(answer, "y", StringComparison.OrdinalIgnoreCase);
         }
     }
 }
